@@ -1,163 +1,97 @@
-<!doctype html>
-<html lang="ru">
+{% extends 'inc/base.html' %}
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AskPupkin</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link href="../static/css/style.css" rel="stylesheet">
-</head>
+{% block content %}
 
-<body>
-    <div class="container">
-        <header class="d-flex align-items-center justify-content-md-between py-3 mb-4 border-bottom">
-            <a href="/" class="d-flex col-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                <h1>AskPupkin</h1>
-            </a>
-            <form class="d-flex col-3 me-2 align-items-center" role="search">
-                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-            </form>
-            <button type="button" class="btn btn-success col-1">Ask!</button>
-            <div class="d-flex">
-                <a href="/" class="d-flex align-items-center">settings</a>
-                <a href="/" class="d-flex align-items-center ms-2">log out</a>
-            </div>
-        </header>
+<div class="d-flex">
+    <div class="col-2 align-items-center">
+        <div class="avatar">
+            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/5.webp" class="rounded-3"
+                 style="height: 80px;" alt="Avatar"/>
+        </div>
+        <div class="d-flex align-items-center mt-1">
+            <button style="color: red;">&#8595</button>
+            <p class=" m-1">10</p>
+            <button style="color: green;"
+            ">&#8593</button>
+        </div>
+    </div>
+    <div class=" col-10">
+        <a href="/" class="d-flex align-items-center">
+            <h4>{{ question.title }}</h4>
+        </a>
+        <p>{{ question.text }}</p>
+        <div class="d-flex">
+            <p class="m-1">Tags:</p>
+            <a href="/" class="d-flex m-1">black-jack</a>
+            <a href="/" class="d-flex m-1">bender</a>
+        </div>
+    </div>
+</div>
 
-        <div class="d-flex align-items-center">
-            <div class="col-8 m-3">
-                <div class="d-flex">
-                    <div class="col-2 align-items-center">
-                        <div class="avatar">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/5.webp" class="rounded-3"
-                                style="height: 80px;" alt="Avatar" />
-                        </div>
-                        <div class="d-flex align-items-center mt-1">
-                            <button style="color: red;">&#8595</button>
-                            <p class=" m-1">10</p>
-                            <button style="color: green;"">&#8593</button>
-                        </div>
-                    </div>
-                    <div class=" col-10">
-                                <a href="/" class="d-flex align-items-center">
-                                    <h4>How to build a moon park?</h4>
-                                </a>
-                                <p>Guys, I have Trouble with a moon park. Can't find th black-jack...Guys, I have
-                                    Trouble with a moon park. Can't find th black-jack...Guys, I have Trouble with a
-                                    moon park. Can't find th black-jack...Guys, I have Trouble with a moon park. Can't
-                                    find th black-jack...Guys, I have Trouble with a moon park. Can't find th
-                                    black-jack...Guys, I have Trouble with a moon park. Can't find th black-jack...Guys,
-                                    I have Trouble with a moon park. Can't find th black-jack...</p>
-                                <div class="d-flex">
-                                    <p class="m-1">Tags:</p>
-                                    <a href="/" class="d-flex m-1">black-jack</a>
-                                    <a href="/" class="d-flex m-1">bender</a>
-                                </div>
-                        </div>
-                    </div>
+<div class="answer d-flex">
+    <div class="col-2 align-items-center">
+        <div class="avatar">
+            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/5.webp" class="rounded-3"
+                 style="height: 80px;" alt="Avatar"/>
+        </div>
+        <div class="d-flex align-items-center mt-1">
+            <button style="color: red;">&#8595</button>
+            <p class=" m-1">10</p>
+            <button style="color: green;"
+            ">&#8593</button>
+        </div>
+    </div>
+    <div class=" col-10">
+        <p>Guys, I have Trouble with a moon park. Can't find th black-jack...Guys, I have
+            Trouble with a moon park. Can't find th black-jack...Guys, I have Trouble with a
+            moon park. Can't find th black-jack...Guys, I have Trouble with a moon park.
+            Can't find th black-jack...Guys, I have Trouble with a moon park. Can't find th
+            black-jack...</p>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Correct!</label>
+        </div>
+    </div>
+</div>
 
-                    <div class="answer d-flex">
-                        <div class="col-2 align-items-center">
-                            <div class="avatar">
-                                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/5.webp" class="rounded-3"
-                                    style="height: 80px;" alt="Avatar" />
-                            </div>
-                            <div class="d-flex align-items-center mt-1">
-                                <button style="color: red;">&#8595</button>
-                                <p class=" m-1">10</p>
-                                <button style="color: green;"">&#8593</button>
-                            </div>
-                        </div>
-                        <div class=" col-10">
-                                    <p>Guys, I have Trouble with a moon park. Can't find th black-jack...Guys, I have
-                                        Trouble with a moon park. Can't find th black-jack...Guys, I have Trouble with a
-                                        moon park. Can't find th black-jack...Guys, I have Trouble with a moon park.
-                                        Can't find th black-jack...Guys, I have Trouble with a moon park. Can't find th
-                                        black-jack...</p>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                        <label class="form-check-label" for="exampleCheck1">Correct!</label>
-                                    </div>
-                            </div>
-                        </div>
-
-                        <div class="answer d-flex">
-                            <div class="col-2 align-items-center">
-                                <div class="avatar">
-                                    <img src="https://mdbcdn.b-cdn.net/img/new/avatars/5.webp" class="rounded-3"
-                                        style="height: 80px;" alt="Avatar" />
-                                </div>
-                                <div class="d-flex align-items-center mt-1">
-                                    <button style="color: red;">&#8595</button>
-                                    <p class=" m-1">10</p>
-                                    <button style="color: green;"">&#8593</button>
-                                </div>
-                            </div>
-                            <div class=" col-10">
-                                        <p>Guys, I have Trouble with a moon park. Can't find th black-jack...Guys, I
-                                            have
-                                            Trouble with a moon park. Can't find th black-jack...Guys, I have Trouble
-                                            with a
-                                            moon park. Can't find th black-jack...Guys, I have Trouble with a moon park.
-                                            Can't find th black-jack...Guys, I have Trouble with a moon park. Can't find
-                                            th
-                                            black-jack...</p>
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                            <label class="form-check-label" for="exampleCheck1">Correct!</label>
-                                        </div>
-                                </div>
-                            </div>
+<div class="answer d-flex">
+    <div class="col-2 align-items-center">
+        <div class="avatar">
+            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/5.webp" class="rounded-3"
+                 style="height: 80px;" alt="Avatar"/>
+        </div>
+        <div class="d-flex align-items-center mt-1">
+            <button style="color: red;">&#8595</button>
+            <p class=" m-1">10</p>
+            <button style="color: green;"
+            ">&#8593</button>
+        </div>
+    </div>
+    <div class=" col-10">
+        <p>Guys, I have Trouble with a moon park. Can't find th black-jack...Guys, I
+            have
+            Trouble with a moon park. Can't find th black-jack...Guys, I have Trouble
+            with a
+            moon park. Can't find th black-jack...Guys, I have Trouble with a moon park.
+            Can't find th black-jack...Guys, I have Trouble with a moon park. Can't find
+            th
+            black-jack...</p>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Correct!</label>
+        </div>
+    </div>
+</div>
 
 
-                            <form class="my-form">
-                                <div class="form-group d-flex">
+<form class="my-form">
+    <div class="form-group d-flex">
                                     <textarea class="form-control" rows="3"
-                                        placeholder="Enter your answer here!"></textarea>
-                                </div>
-                                <div class="form-group d-flex">
-                                    <button type="submit" class="btn btn-primary">Answer</button>
-                                </div>
-                            </form>
+                                              placeholder="Enter your answer here!"></textarea>
+    </div>
+    <div class="form-group d-flex">
+        <button type="submit" class="btn btn-primary">Answer</button>
+    </div>
+</form>
 
-                        </div>
-
-                        <div class="col-4">
-                            <div>
-                                <h3 class="m-2">Popular Tags</h3>
-                                <span>Super Tag!</span>
-                                <span>Super Tag!</span>
-                                <span>Super Tag!</span>
-                                <span>Super Tag!</span>
-                                <span>Super Tag!</span>
-                                <span>Super Tag!</span>
-                                <span>Super Tag!</span>
-                                <span>Super Tag!</span>
-                                <span>Super Tag!</span>
-                                <span>Super Tag!</span>
-                                <span>Super Tag!</span>
-                                <span>Super Tag!</span>
-                                <span>Super Tag!</span>
-                                <span>Super Tag!</span>
-                            </div>
-                            <div>
-                                <h3 class="m-2">Best Members</h3>
-                                <a href="/" class="d-flex m-1">Super Member</a>
-                                <a href="/" class="d-flex m-1">Super Member</a>
-                                <a href="/" class="d-flex m-1">Super Member</a>
-                                <a href="/" class="d-flex m-1">Super Member</a>
-                                <a href="/" class="d-flex m-1">Super Member</a>
-                                <a href="/" class="d-flex m-1">Super Member</a>
-                                <a href="/" class="d-flex m-1">Super Member</a>
-                            </div>
-                        </div>
-
-                    </div>
-                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-                        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-                        crossorigin="anonymous"></script>
-</body>
-
-</html>
+{% endblock %}
