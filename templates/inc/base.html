@@ -29,14 +29,14 @@
             <div class="m-2">
                 <h6 class="">Dr. Pepper</h6>
                 <div class="d-flex align-items-center">
-                    <a href="/" class="d-flex align-items-center">settings</a>
-                    <a href="/" class="d-flex align-items-center ms-2">log out</a>
+                    <a href="{% url 'settings' %}" class="d-flex align-items-center">settings</a>
+                    <a href="#" class="d-flex align-items-center ms-2">log out</a>
                 </div>
             </div>
             {% else %}
             <div class="d-flex">
-                <a href="/" class="d-flex align-items-center">log in</a>
-                <a href="/" class="d-flex align-items-center ms-2">register</a>
+                <a href="{% url 'login' %}" class="d-flex align-items-center">log in</a>
+                <a href="{% url 'signup' %}" class="d-flex align-items-center ms-2">register</a>
             </div>
             {% endif %}
         </div>
@@ -67,13 +67,11 @@
             </div>
             <div>
                 <h3 class="m-2">Best Members</h3>
-                <a href="/" class="d-flex m-1">Super Member</a>
-                <a href="/" class="d-flex m-1">Super Member</a>
-                <a href="/" class="d-flex m-1">Super Member</a>
-                <a href="/" class="d-flex m-1">Super Member</a>
-                <a href="/" class="d-flex m-1">Super Member</a>
-                <a href="/" class="d-flex m-1">Super Member</a>
-                <a href="/" class="d-flex m-1">Super Member</a>
+                <a href="#" class="d-flex m-1">Super Member</a>
+                <a href="#" class="d-flex m-1">Super Member</a>
+                <a href="#" class="d-flex m-1">Super Member</a>
+                <a href="#" class="d-flex m-1">Super Member</a>
+                <a href="#" class="d-flex m-1">Super Member</a>
             </div>
         </div>
     </div>

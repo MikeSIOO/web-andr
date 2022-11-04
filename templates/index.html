@@ -3,15 +3,21 @@
 {% block content %}
 
 <div class="d-flex align-items-center">
+    {% if hot %}
+    <a href="{% url 'index' %}" class="d-flex m-1">
+        <h3 class="m-1">New Questions</h3>
+    </a>
+    <h5 class="ms-4 mt-2">Hot Questions</h5>
+    {% else %}
     <h3 class="m-1">New Questions</h3>
-    <!-- Я не понимаю почему она уезжает наверх -->
-    <a href="/" class="d-flex m-1">
+    <a href="{% url 'hot' %}" class="d-flex m-1">
         <h5 class="ms-4 mt-2">Hot Questions</h5>
     </a>
+    {% endif %}
 </div>
 
 {% for question in questions %}
-    {% include 'inc/question_item.html' %}
+{% include 'inc/question_item.html' %}
 {% endfor %}
 
 {% include 'inc/paginator.html' %}
