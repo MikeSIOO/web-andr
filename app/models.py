@@ -14,5 +14,5 @@ QUESTIONS = [
                 'text': f'Text of answer #{answer_id}',
             } for answer_id in range(2)
         ]
-    } for question_id in range(3)
+    } for question_id in range(30)
 ]
