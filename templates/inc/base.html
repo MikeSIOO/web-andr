@@ -21,7 +21,9 @@
         <form class="d-flex col-3 me-2 align-items-center" role="search">
             <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
         </form>
-        <button type="button" class="btn btn-success col-1">Ask!</button>
+        <button type="button" class="btn btn-success col-1">
+            <a href="{% url 'ask' %}" class="text-light text-decoration-none">Ask!</a>
+        </button>
         <div class="d-flex align-items-center">
             {% if True %}
             <img src="https://mdbcdn.b-cdn.net/img/new/avatars/5.webp" class="rounded-3" style="height: 60px;"
