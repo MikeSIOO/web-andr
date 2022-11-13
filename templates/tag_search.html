@@ -6,10 +6,6 @@
     <h3 class="m-1">Tag: {{ tag_name }}</h3>
 </div>
 
-{% for question in questions %}
-    {% include 'inc/question_item.html' %}
-{% endfor %}
-
-{% include 'inc/paginator.html' %}
+{% include 'inc/questions_list.html' %}
 
 {% endblock %}

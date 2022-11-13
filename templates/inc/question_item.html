@@ -6,7 +6,7 @@
         </div>
         <div class="d-flex align-items-center mt-1">
             <button style="color: red;">&#8595</button>
-            <p class=" m-1">10</p>
+            <p class=" m-1">{{ question.rating }}</p>
             <button style="color: green;">&#8593</button>
         </div>
     </div>
@@ -17,11 +17,12 @@
         <p>{{ question.text }}</p>
         <div class="d-flex">
             <div class="col-3">
+<!--                TODO  num of answers!-->
                 <a href="{% url 'question' question_id=question.id %}" class="d-flex m-1">answer (2)</a>
             </div>
             <div class="d-flex col-9">
                 <p class="m-1">Tags:</p>
-                {% for tag in question.tags %}
+                {% for tag in question.tags.all %}
                     {% include 'inc/tag_item.html' %}
                 {% endfor %}
             </div>

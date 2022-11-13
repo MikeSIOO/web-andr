@@ -25,11 +25,12 @@
             <a href="{% url 'ask' %}" class="text-light text-decoration-none">Ask!</a>
         </button>
         <div class="d-flex align-items-center">
-            {% if True %}
+            {% if user.is_authenticated %}
+            <!--            mike 1234-->
             <img src="https://mdbcdn.b-cdn.net/img/new/avatars/5.webp" class="rounded-3" style="height: 60px;"
                  alt="Avatar"/>
             <div class="m-2">
-                <h6 class="">Dr. Pepper</h6>
+                <h6 class="">{{ user.username }}</h6>
                 <div class="d-flex align-items-center">
                     <a href="{% url 'settings' %}" class="d-flex align-items-center">settings</a>
                     <a href="#" class="d-flex align-items-center ms-2">log out</a>
@@ -44,36 +45,26 @@
         </div>
     </header>
 
-    <div class="d-flex align-items-center">
-        <div class="col-8">
+    <div class="d-flex">
+        <div class="col-8 m-3">
             {% block content %}
             {% endblock %}
         </div>
-        <div class="col-4">
+        <div class="col-4 m-3">
             <div>
-                <h3 class="m-2">Popular Tags</h3>
-                <span>Super Tag!</span>
-                <span>Super Tag!</span>
-                <span>Super Tag!</span>
-                <span>Super Tag!</span>
-                <span>Super Tag!</span>
-                <span>Super Tag!</span>
-                <span>Super Tag!</span>
-                <span>Super Tag!</span>
-                <span>Super Tag!</span>
-                <span>Super Tag!</span>
-                <span>Super Tag!</span>
-                <span>Super Tag!</span>
-                <span>Super Tag!</span>
-                <span>Super Tag!</span>
+                <h4 class="pb-2 ">Popular tags</h4>
+                {% for tag in popular_tags.all %}
+                <a href="{% url 'tag' tag_name=tag.name %}" type="button " class="btn btn-light mb-1 ">{{ tag.name }}</a>
+                {% endfor %}
             </div>
+
             <div>
-                <h3 class="m-2">Best Members</h3>
-                <a href="#" class="d-flex m-1">Super Member</a>
-                <a href="#" class="d-flex m-1">Super Member</a>
-                <a href="#" class="d-flex m-1">Super Member</a>
-                <a href="#" class="d-flex m-1">Super Member</a>
-                <a href="#" class="d-flex m-1">Super Member</a>
+                <h4 class="pb-2 ">Best Members</h4>
+                <ol class=" list-unstyled ">
+                    {% for nickname in best_members.all %}
+                    <li><a href="# ">{{ nickname.user }}</a></li>
+                    {% endfor %}
+                </ol>
             </div>
         </div>
     </div>

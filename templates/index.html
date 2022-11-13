@@ -16,10 +16,6 @@
     {% endif %}
 </div>
 
-{% for question in questions %}
-{% include 'inc/question_item.html' %}
-{% endfor %}
-
-{% include 'inc/paginator.html' %}
+{% include 'inc/questions_list.html' %}
 
 {% endblock %}
