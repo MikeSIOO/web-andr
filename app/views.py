@@ -54,7 +54,7 @@ def settings(request):
 
 def paginate(object_list, request):
     # paginator = Paginator(object_list, 3)
-    paginator = Paginator(list(object_list), 3)
+    paginator = Paginator(list(object_list), 10)
     page = request.GET.get('page')
     try:
         if int(page) > paginator.num_pages or int(page) < 1:

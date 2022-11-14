@@ -17,8 +17,7 @@
         <p>{{ question.text }}</p>
         <div class="d-flex">
             <div class="col-3">
-<!--                TODO  num of answers!-->
-                <a href="{% url 'question' question_id=question.id %}" class="d-flex m-1">answer (2)</a>
+                <a href="{% url 'question' question_id=question.id %}" class="d-flex m-1">answer ({{ question.answers_count }})</a>
             </div>
             <div class="d-flex col-9">
                 <p class="m-1">Tags:</p>

@@ -36,7 +36,7 @@ class AnswerManager(models.Manager):
 
 
 class Tag(models.Model):
-    name = models.CharField(max_length=30, unique=True)
+    name = models.CharField(max_length=100, unique=True)
     usage_num = models.PositiveIntegerField(default=0)
 
     objects = TagManager()
@@ -67,6 +67,7 @@ class Question(models.Model):
     date_create = models.DateField(auto_now_add=True)
     tags = models.ManyToManyField(Tag, blank=True)
     rating = models.IntegerField(default=0)
+    answers_count = models.IntegerField(default=0)
 
     objects = QuestionManager()
 
