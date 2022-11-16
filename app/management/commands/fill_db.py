@@ -15,7 +15,7 @@ class Command(BaseCommand):
         parser.add_argument('--tag', '-t', type=int)
         parser.add_argument('--question', '-q', type=int)
         parser.add_argument('--answer', '-a', type=int)
-        parser.add_argument('--ratio', '-к', type=int)
+        parser.add_argument('--ratio', '-r', type=int)
 
     def fill_profiles(self, count):
         for i in range(count):

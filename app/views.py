@@ -37,23 +37,22 @@ def question(request, question_id: int):
 
 
 def login(request):
-    return render(request, 'log_in.html')
+    return render(request, 'log_in.html', context)
 
 
 def signup(request):
-    return render(request, 'registration.html')
+    return render(request, 'registration.html', context)
 
 
 def ask(request):
-    return render(request, 'new_question.html')
+    return render(request, 'new_question.html', context)
 
 
 def settings(request):
-    return render(request, 'settings.html')
+    return render(request, 'settings.html', context)
 
 
 def paginate(object_list, request):
-    # paginator = Paginator(object_list, 3)
     paginator = Paginator(list(object_list), 10)
     page = request.GET.get('page')
     try:
